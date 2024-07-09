@@ -47,7 +47,7 @@ Follow these steps to shard the log:
 
     ```bash
     CURRENT_TREE_ID=$(rekor-cli loginfo --format json | jq -r .TreeID)
-    CURRENT_SHARD_LENGTH=$(rekor-cli loginfo --format json | jq -r .TreeSize)
+    CURRENT_SHARD_LENGTH=$(rekor-cli loginfo --format json | jq -r .ActiveTreeSize)
     ```
 
 3. Connect to the production cluster. Port-forward the running `trillian_logserver` container and run the [createtree](https://github.com/google/trillian/blob/master/cmd/createtree/main.go) script.
